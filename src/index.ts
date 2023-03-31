@@ -6,6 +6,8 @@ export interface Config {}
 export const Config: Schema<Config> = Schema.object({})
 export function apply(ctx: Context) {
   ctx.on("before-send",async (session)=>{
-    session.elements = await ctx.censor.transform(session.elements,session)
-  })
+    if(!session.elements.some((e)=>e.type != "text")){
+      session.elements = await ctx.censor.transform(session.elements,session)
+    }
+  },true)
 }

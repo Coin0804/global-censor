@@ -1,7 +1,15 @@
 {
   "name": "koishi-plugin-global-censor",
   "description": "koishi plugin command global censor",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "contributors": [
+    "Coin<coin0804@outlook.com>"
+  ],
+  "homepage": "https://github.com/coin0804/global-censor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coin0804/global-censor.git"
+  },
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -18,5 +26,20 @@
   ],
   "peerDependencies": {
     "koishi": "^4.12.2"
+  },
+  "koishi": {
+    "description": {
+      "zh": "全局内容审核",
+      "en": "global censor"
+    },
+    "service": {
+      "required": [
+        "censor"
+      ]
+    },
+    "locales": [
+      "zh",
+      "en"
+    ]
   }
 }
